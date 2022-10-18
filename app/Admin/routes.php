@@ -16,4 +16,5 @@ Route::group([
     $router->resource('categories', CategoryController::class);
     $router->resource('news', NewsController::class);
     $router->resource('sliders', SliderController::class);
+    $router->resource('menus', MenuController::class);
 });
