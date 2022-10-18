@@ -4,6 +4,8 @@ namespace App\Admin\Controllers;
 
 use App\Models\Category;
 use App\Models\News;
+use Encore\Admin\Admin;
+use Encore\Admin\Auth\Database\Administrator;
 use Encore\Admin\Controllers\AdminController;
 use Encore\Admin\Form;
 use Encore\Admin\Grid;
@@ -31,11 +33,15 @@ class NewsController extends AdminController
         $grid->column('id', __('Id'));
         $grid->column('category.name', __('Kategori'));
         $grid->column('user.name', __('Diupload Oleh'));
-        $grid->column('verified_by', __('Verifikasi'));
+        if (Auth::user()->roles[0]->name == 'Operator') {
+            $grid->column('verified_by', __('Verifikasi'))->default('Belum Diverifikasi');
+        }else{
+            $grid->column('verified_by', __('Verifikasi'))->editable('select',[1=>'Terima',2=>'Tolak']);
+        }
         $grid->column('title', __('Judul'));
         $grid->column('date', __('Tanggal'));
         $grid->column('content', __('Konten'));
-        $grid->column('image', __('Image'));
+        $grid->column('image', __('Image'))->image();
         $grid->column('created_at', __('Created at'));
         $grid->column('updated_at', __('Updated at'));
 
@@ -84,6 +90,10 @@ class NewsController extends AdminController
         $form->image('image', __('Image'));
         $form->submitted(function (Form $form) {
             $form->user_id = Auth::user()->id;
+            if (Auth::user()->roles[0]->name != 'Operator') {
+                $form->verified_by = 1;
+            }else{
+            }
         });
         return $form;
     }
