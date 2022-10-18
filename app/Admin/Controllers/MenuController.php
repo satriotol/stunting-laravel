@@ -69,7 +69,7 @@ class MenuController extends AdminController
 
         $form->text('name', __('Name'));
         $form->text('slug', __('Slug'));
-        $form->textarea('content', __('Content'));
+        $form->summernote('content', __('Content'));
         $form->image('image', __('Image'));
 
         return $form;

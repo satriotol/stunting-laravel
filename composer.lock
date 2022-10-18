@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a8ce8a8b86f14b6bda75c2a4ff07a367",
+    "content-hash": "639f1b5566d0d61c506d78dff0b90dab",
     "packages": [
         {
             "name": "brick/math",
@@ -1365,6 +1365,63 @@
                 "source": "https://github.com/laravel-admin-extensions/helpers/tree/v2.0.2"
             },
             "time": "2021-10-11T09:41:51+00:00"
+        },
+        {
+            "name": "laravel-admin-ext/summernote",
+            "version": "v1.0.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/laravel-admin-extensions/summernote.git",
+                "reference": "e9b15cc21f2cc9dc4e60d8994451595046fa71c3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/laravel-admin-extensions/summernote/zipball/e9b15cc21f2cc9dc4e60d8994451595046fa71c3",
+                "reference": "e9b15cc21f2cc9dc4e60d8994451595046fa71c3",
+                "shasum": ""
+            },
+            "require": {
+                "encore/laravel-admin": "~1.6",
+                "php": ">=7.0.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~6.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Encore\\Summernote\\SummernoteServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Encore\\Summernote\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "song",
+                    "email": "zsong@126.com"
+                }
+            ],
+            "description": "Summernote extension for laravel-admin",
+            "homepage": "https://github.com/laravel-admin-ext/summernote",
+            "keywords": [
+                "editor",
+                "extension",
+                "laravel-admin"
+            ],
+            "support": {
+                "issues": "https://github.com/laravel-admin-extensions/summernote/issues",
+                "source": "https://github.com/laravel-admin-extensions/summernote/tree/v1.0.3"
+            },
+            "time": "2021-10-20T04:08:14+00:00"
         },
         {
             "name": "laravel/framework",
