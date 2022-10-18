@@ -13,5 +13,5 @@ Route::group([
 
     $router->get('/', 'HomeController@index')->name('home');
     $router->resource('links', LinkController::class);
-
+    $router->resource('categories', CategoryController::class);
 });
